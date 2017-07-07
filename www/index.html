@@ -137,10 +137,11 @@
 	<script type="text/javascript">
 		var login = function () {
 			alert("test");
+			var appId = "1389666644483757";
+			facebookConnectPlugin.browserInit(appId);
+			alert("test2");
 			if (window.cordova.platformId == "browser") {
-				var appId = prompt("Enter FB Application ID", "");
-				var appId = "1389666644483757";
-				facebookConnectPlugin.browserInit(appId);
+				//var appId = prompt("Enter FB Application ID", "");
 			}
 			facebookConnectPlugin.login( ["email"], 
 				function (response) { alert(JSON.stringify(response)) },
@@ -169,15 +170,10 @@
 						$("#workouts").fadeIn();
 					});
 				}
-				else if ( $(this).attr("id") == "chat_link") {
-					//facebookConnectPlugin.browserInit('APPID');
-					facebookConnectPlugin.browserInit('1389666644483757');
-					facebookConnectPlugin.login("public_profile,email", function(error) { console.log("THIS IS AN WIN FROM FB: " + error); $("#buddies h1").text('test'); }, function(error){ console.log("THIS IS AN ERROR FROM FB: " + error); $("#buddies h1").text('error'); });
-					
+				else if ( $(this).attr("id") == "chat_link") {					
 					$(".content-container:visible").fadeOut(100, function() {
 						$("#chat").fadeIn();
 					});
-					
 				}
 				return false;
 			});
