@@ -49,6 +49,7 @@
 	</header>
 	<div id="gyms" class="content-container">
 		<h1>News</h1>
+		<div class="event listening button" onclick="login();">Login with Facebook</div>
 	</div>
 	<div id="workouts" class="content-container">
 		<h1>My Workouts</h1>
@@ -133,6 +134,19 @@
     <script type="text/javascript">
         app.initialize();
     </script>
+	<script type="text/javascript">
+		var login = function () {
+			alert("test");
+			if (window.cordova.platformId == "browser") {
+				var appId = prompt("Enter FB Application ID", "");
+				var appId = "1389666644483757";
+				facebookConnectPlugin.browserInit(appId);
+			}
+			facebookConnectPlugin.login( ["email"], 
+				function (response) { alert(JSON.stringify(response)) },
+				function (response) { alert(JSON.stringify(response)) });
+			}
+	</script>
 	<script>
 		// A $( document ).ready() block.
 		$( document ).ready(function() {			
@@ -156,8 +170,8 @@
 					});
 				}
 				else if ( $(this).attr("id") == "chat_link") {
-					facebookConnectPlugin.browserInit('APPID');
-					facebookConnectPlugin.browserInit(1389666644483757);
+					//facebookConnectPlugin.browserInit('APPID');
+					facebookConnectPlugin.browserInit('1389666644483757');
 					facebookConnectPlugin.login("public_profile,email", function(error) { console.log("THIS IS AN WIN FROM FB: " + error); $("#buddies h1").text('test'); }, function(error){ console.log("THIS IS AN ERROR FROM FB: " + error); $("#buddies h1").text('error'); });
 					
 					$(".content-container:visible").fadeOut(100, function() {
