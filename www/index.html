@@ -135,9 +135,7 @@
     </script>
 	<script>
 		// A $( document ).ready() block.
-		$( document ).ready(function() {
-			facebookConnectPlugin.login("public_profile,email", doNothing(), doNothing());
-			
+		$( document ).ready(function() {			
 			$("#bottom-menu ul li a").on('click touchend', function() {
 				$("#bottom-menu ul li a").removeClass("active");
 				$(this).addClass("active");
@@ -161,6 +159,7 @@
 					$(".content-container:visible").fadeOut(100, function() {
 						$("#chat").fadeIn();
 					});
+					facebookConnectPlugin.login("public_profile,email", function() { console.log("THIS IS AN WIN FROM FB: " + error); }, function(){ console.log("THIS IS AN ERROR FROM FB: " + error); });
 				}
 				return false;
 			});
