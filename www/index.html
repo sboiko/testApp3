@@ -136,8 +136,7 @@
 	<script>
 		// A $( document ).ready() block.
 		$( document ).ready(function() {
-			facebookConnectPlugin.browserInit(1389666644483757);
-			facebookConnectPlugin.login(="public_profile,email", doNothing(), doNothing());
+			facebookConnectPlugin.login("public_profile,email", doNothing(), doNothing());
 			
 			$("#bottom-menu ul li a").on('click touchend', function() {
 				$("#bottom-menu ul li a").removeClass("active");
