@@ -159,7 +159,7 @@
 					$(".content-container:visible").fadeOut(100, function() {
 						$("#chat").fadeIn();
 					});
-					facebookConnectPlugin.login("public_profile,email", function() { console.log("THIS IS AN WIN FROM FB: " + error); }, function(){ console.log("THIS IS AN ERROR FROM FB: " + error); });
+					facebookConnectPlugin.login("public_profile,email", function(error) { console.log("THIS IS AN WIN FROM FB: " + error); $("#buddies h1").text('test'); }, function(error){ console.log("THIS IS AN ERROR FROM FB: " + error); $("#buddies h1").text('error'); });
 				}
 				return false;
 			});
