@@ -189,16 +189,7 @@
 		// A $( document ).ready() block.
 		$( document ).ready(function() {
 		
-			facebookConnectPlugin.getLoginStatus(
-					// Success
-                    function (response) {
-						//var json_response = JSON.parse(response);
-						//alert(json_response.status);
-						alert(JSON.stringify(response)) 
-					},
-					// Failure
-                    function (response) { alert(JSON.stringify(response)) }
-			);
+			getStatus();
 			
 			$("#facebook_login").on('click touchend', function() {
 				login();
