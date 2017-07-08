@@ -135,7 +135,7 @@
     </div>
 	-->
     <div id="fb-root"></div>
-        
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
             var login = function () {
                 if (window.cordova.platformId == "browser") {
@@ -189,6 +189,8 @@
 		// A $( document ).ready() block.
 		$( document ).ready(function() {
 				
+			alert("loaded");
+			
 			$("#facebook_login").on('click touchend', function() {
 				login();
 				return false;
