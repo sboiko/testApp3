@@ -142,7 +142,7 @@
                     var appId = prompt("Enter FB Application ID", "");
                     facebookConnectPlugin.browserInit(appId);
                 }
-                facebookConnectPlugin.login( ["public_profile,email,user_birthday,friends"], 
+                facebookConnectPlugin.login( ["public_profile,email,user_friends"], 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
             }
