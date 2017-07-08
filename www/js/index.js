@@ -34,7 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		
+		alert("deviceReady")
 		var fbLoginSuccess = function (userData) {
 			alert("UserInfo: " + JSON.stringify(userData));
 		}
