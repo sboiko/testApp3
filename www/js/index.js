@@ -34,6 +34,14 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		
+		var fbLoginSuccess = function (userData) {
+			alert("UserInfo: " + JSON.stringify(userData));
+		}
+		facebookConnectPlugin.login(["public_profile"],
+			fbLoginSuccess,
+			function (error) { alert("" + error) }
+		);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
