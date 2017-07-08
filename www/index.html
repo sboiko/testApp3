@@ -192,8 +192,8 @@
 			facebookConnectPlugin.getLoginStatus(
 					// Success
                     function (response) {
-						var status = response.status;
-						alert(status);
+						var json_response = jquery.parsonJSON(response);
+						alert(json_response.status);
 						//alert(JSON.stringify(response)) 
 					},
 					// Failure
