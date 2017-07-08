@@ -122,4 +122,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+	
+	<access origin="http://m.facebook.com" />
+	<access origin="http://graph.facebook.com" />
+	<access origin="http://api.facebook.com" />
+	<access origin="http://fbcdn.net" subdomains="true" />
+	<access origin="http://akamaihd.net" subdomains="true" />
 </widget>

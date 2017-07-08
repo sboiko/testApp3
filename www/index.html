@@ -140,9 +140,11 @@
 			if (window.cordova.platformId == "browser") {
 				alert('test');
 				var appId = prompt("Enter FB Application ID", "");
-				var appId = "1389666644483757";
-				facebookConnectPlugin.browserInit(appId);
+				
 			}
+			var appId = "1389666644483757";
+			facebookConnectPlugin.browserInit(appId);
+			
 			facebookConnectPlugin.login( ["email"], 
 				function (response) { alert(JSON.stringify(response)) },
 				function (response) { alert(JSON.stringify(response)) });
