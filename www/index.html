@@ -49,6 +49,8 @@
 	</header>
 	<div id="gyms" class="content-container">
 		<h1>News</h1>
+		<a href="#" id="facebook_login">Login with Facebook</a>
+		
 		 <div class="event listening button" onclick="login();">Login with Facebook</div>
 		<div class="event listening button" onclick="showDialog();">Show Dialog with Facebook</div>
 		<div class="event listening button" onclick="apiTest();">Test API with Facebook</div>
@@ -140,7 +142,7 @@
                     var appId = prompt("Enter FB Application ID", "");
                     facebookConnectPlugin.browserInit(appId);
                 }
-                facebookConnectPlugin.login( ["email"], 
+                facebookConnectPlugin.login( ["public_profile,email,user_birthday,friends"], 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
             }
@@ -185,7 +187,12 @@
 
 	<script>
 		// A $( document ).ready() block.
-		$( document ).ready(function() {			
+		$( document ).ready(function() {
+			$("#facebook_login").on('click touchend', function() {
+				login();
+				return false;
+			});
+			
 			$("#bottom-menu ul li a").on('click touchend', function() {
 				$("#bottom-menu ul li a").removeClass("active");
 				$(this).addClass("active");
@@ -206,10 +213,6 @@
 					});
 				}
 				else if ( $(this).attr("id") == "chat_link") {
-					//facebookConnectPlugin.browserInit('APPID');
-					facebookConnectPlugin.browserInit('1389666644483757');
-					facebookConnectPlugin.login("public_profile,email", function(error) { console.log("THIS IS AN WIN FROM FB: " + error); $("#buddies h1").text('test'); }, function(error){ console.log("THIS IS AN ERROR FROM FB: " + error); $("#buddies h1").text('error'); });
-					
 					$(".content-container:visible").fadeOut(100, function() {
 						$("#chat").fadeIn();
 					});

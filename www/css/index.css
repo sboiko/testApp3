@@ -105,6 +105,19 @@ header {
 		margin-bottom: 30px;
 		font-weight: 700;
 	}
+	
+/* Splash screen */
+#facebook_login {
+	background: #4267B2;
+	display: block;
+	color: #ffffff;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 4px;
+	padding: 12px 0px;
+	text-decoration: none;
+	margin-bottom: 20px;
+}
 #gyms {
 	
 }
