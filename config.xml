@@ -132,6 +132,17 @@
 	  </array>
 	</config-file>
 	
+	<gap:config-file platform="ios" parent="CFBundleURLTypes">
+		<array>
+		<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+		<string>fb1389666644483757</string>
+		</array>
+		</dict>
+		</array>
+	</gap:config-file>
+	
 	<access origin="http://m.facebook.com" />
 	<access origin="http://graph.facebook.com" />
 	<access origin="http://api.facebook.com" />
