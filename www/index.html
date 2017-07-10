@@ -202,8 +202,6 @@
 			function startApp() {
 				facebookConnectPlugin.getLoginStatus( 
                     function (response) {
-						alert("test");
-						alert(response.status);
 						// show login procedure
 						if (response.status != "connected") {
 							$("#login").fadeIn();

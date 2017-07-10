@@ -115,6 +115,7 @@ header {
 	bottom: 0;
 	z-index: 10000000;
 	background: orange;
+	padding: 20px;
 }
 #facebook_login {
 	background: #4267B2;
@@ -126,6 +127,11 @@ header {
 	padding: 12px 0px;
 	text-decoration: none;
 	margin-bottom: 20px;
+	position: absolute;
+	bottom: 3%;
+	right: 3%;
+	left: 3%;
+	width: 94%;
 }
 #gyms {
 	
