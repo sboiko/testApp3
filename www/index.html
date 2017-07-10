@@ -139,11 +139,12 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
             var login = function () {
-                if (window.cordova.platformId == "browser") {
+                alert("mid-login function");
+				if (window.cordova.platformId == "browser") {
                     var appId = prompt("Enter FB Application ID", "");
                     facebookConnectPlugin.browserInit(appId);
                 }
-				alert("mid-login function");
+				
                 facebookConnectPlugin.login( ["public_profile","email","user_friends"], 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
