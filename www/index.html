@@ -163,6 +163,7 @@
             }
 			
 			var getProfilePicture = function (userId) {
+				alert("getting profile pic!");
 				facebookConnectPlugin.api("/"+ userId +"/picture", function(response) {
 					if (response && !response.error) {
 						/* handle the result */
@@ -226,8 +227,8 @@
 						// do normal app things
 						else {
 							$("#login").fadeOut();
-							var userId = response.userId;
-							
+							var userId = response.userID;
+							alert(userId);
 							getProfilePicture(userId);
 						}
 					},
