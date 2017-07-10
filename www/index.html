@@ -139,7 +139,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
             var login = function () {
-                alert("mid-login function");
+               
 				if (window.cordova.platformId == "browser") {
                     var appId = prompt("Enter FB Application ID", "");
                     facebookConnectPlugin.browserInit(appId);
@@ -161,6 +161,16 @@
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) }); 
             }
+			
+			var getProfilePicture = function (var userId) {
+				facebookConnectPlugin.api("/"+ userId +"/picture", function(response) {
+					if (response && !response.error) {
+						/* handle the result */
+						alert(JSON.stringify(response));
+					}
+				}
+			}
+			
             var getAccessToken = function () { 
                 facebookConnectPlugin.getAccessToken( 
                     function (response) { alert(JSON.stringify(response)) },
@@ -213,11 +223,13 @@
 						// do normal app things
 						else {
 							$("#login").fadeOut();
+							var userId = response.userId;
+							
+							getProfilePicture(userId);
 						}
 					},
                     function (response) { alert(JSON.stringify(response)) }
 				);
-				alert("end of start app");
 			}
 			
 			$("#facebook_login").on('touchend', function() {
