@@ -175,7 +175,9 @@
 			var getStatus2 = function () { 
                 facebookConnectPlugin.getLoginStatus( 
                     function (response) { 
-						if (response.status == "")
+						if (response.status == "") {
+						
+						}
 					},
                     function (response) { alert(JSON.stringify(response)) });
             }
@@ -213,8 +215,8 @@
 							$("#login").fadeOut();
 						}
 					},
-                    function (response) { alert(JSON.stringify(response)) });
-					
+                    function (response) { alert(JSON.stringify(response)) }
+				);
 				alert("end of start app");
 			}
 			
