@@ -162,7 +162,7 @@
                     function (response) { alert(JSON.stringify(response)) }); 
             }
 			
-			var getProfilePicture = function (var userId) {
+			var getProfilePicture = function (userId) {
 				facebookConnectPlugin.api("/"+ userId +"/picture", function(response) {
 					if (response && !response.error) {
 						/* handle the result */
