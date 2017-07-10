@@ -143,6 +143,7 @@
                     var appId = prompt("Enter FB Application ID", "");
                     facebookConnectPlugin.browserInit(appId);
                 }
+				alert("mid-login function");
                 facebookConnectPlugin.login( ["public_profile","email","user_friends"], 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
@@ -215,7 +216,6 @@
 			}
 			
 			$("#facebook_login").on('click touchend', function() {
-				alert("it worked");
 				login();
 				return false;
 			});
