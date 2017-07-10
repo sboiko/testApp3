@@ -44,14 +44,15 @@
 </head>
 
 <body>
+	<div id="login">
+		<a href="#" id="facebook_login">Login with Facebook</a>
+	</div>
 	<header>
 		<strong>gym</strong>vite
 	</header>
 	<div id="gyms" class="content-container">
 		<h1>News</h1>
-		<a href="#" id="facebook_login">Login with Facebook</a>
-		
-		 <div class="event listening button" onclick="login();">Login with Facebook</div>
+		<div class="event listening button" onclick="login();">Login with Facebook</div>
 		<div class="event listening button" onclick="showDialog();">Show Dialog with Facebook</div>
 		<div class="event listening button" onclick="apiTest();">Test API with Facebook</div>
 		<div class="event listening button" onclick="getAccessToken();">Get access token with Facebook</div>
@@ -169,6 +170,13 @@
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
             }
+			var getStatus2 = function () { 
+                facebookConnectPlugin.getLoginStatus( 
+                    function (response) { 
+						if (response.status == "")
+					},
+                    function (response) { alert(JSON.stringify(response)) });
+            }
             var logout = function () { 
                 facebookConnectPlugin.logout( 
                     function (response) { alert(JSON.stringify(response)) },
@@ -181,12 +189,6 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 	
-	<!--
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-	-->
-
 	<script>
 		// A $( document ).ready() block.
 		$( function() {
@@ -195,7 +197,21 @@
 			
 			function onDeviceReady() {
 				//alert('test');
-				getStatus();
+				
+			}
+			function startApp() {
+				facebookConnectPlugin.getLoginStatus( 
+                    function (response) {
+						// show login procedure
+						if (response.status != "connected") {
+							$("#login").fadeIn();
+						}
+						// do normal app things
+						else {
+							$("#login").fadeOut();
+						}
+					},
+                    function (response) { alert(JSON.stringify(response)) });
 			}
 			
 			$("#facebook_login").on('click touchend', function() {
