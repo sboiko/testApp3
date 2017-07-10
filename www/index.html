@@ -227,7 +227,7 @@
 						// do normal app things
 						else {
 							$("#login").fadeOut();
-							var userId = response.userID;
+							var userId = response.authResponse.userID;
 							alert(userId);
 							getProfilePicture(userId);
 						}
