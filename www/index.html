@@ -166,6 +166,7 @@
 				alert("getting profile pic!");
 				facebookConnectPlugin.api("/"+ userId +"/picture", function(response) {
 					if (response && !response.error) {
+						alert("test")
 						/* handle the result */
 						alert(JSON.stringify(response));
 					}
