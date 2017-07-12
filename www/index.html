@@ -240,7 +240,6 @@
 						}
 						// do normal app things
 						else {
-							$("#login").fadeOut();
 							//var userId = response.authResponse.userID;
 							afterLogin(response.authResponse.userID);
 						}
@@ -249,7 +248,7 @@
 				);
 			}
 			function afterLogin(fn_userId) {
-				$("#login").fadeIn();
+				$("#login").fadeOut();
 				userId = fn_userId;
 			}
 			
