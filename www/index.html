@@ -139,7 +139,6 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
             var login = function () {
-               
 				if (window.cordova.platformId == "browser") {
                     var appId = prompt("Enter FB Application ID", "");
                     facebookConnectPlugin.browserInit(appId);
@@ -147,6 +146,20 @@
 				
                 facebookConnectPlugin.login( ["public_profile","email","user_friends"], 
                     function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+			
+			var login2 = function () {
+               
+				if (window.cordova.platformId == "browser") {
+                    var appId = prompt("Enter FB Application ID", "");
+                    facebookConnectPlugin.browserInit(appId);
+                }
+                facebookConnectPlugin.login( ["public_profile","email","user_friends"], 
+					// Success
+                    function (response) {
+						afterLogin(response.authResponse.userID);
+					},
                     function (response) { alert(JSON.stringify(response)) });
             }
             
@@ -223,18 +236,21 @@
                     function (response) {
 						// show login procedure
 						if (response.status != "connected") {
-							$("#login").fadeIn();
+							login2();
 						}
 						// do normal app things
 						else {
 							$("#login").fadeOut();
-							var userId = response.authResponse.userID;
-							alert(userId);
-							getProfilePicture(userId);
+							//var userId = response.authResponse.userID;
+							afterLogin(response.authResponse.userID);
 						}
 					},
                     function (response) { alert(JSON.stringify(response)) }
 				);
+			}
+			function afterLogin(fn_userId) {
+				$("#login").fadeIn();
+				userId = fn_userId;
 			}
 			
 			$("#facebook_login").on('touchend', function() {
