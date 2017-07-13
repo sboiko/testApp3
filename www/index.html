@@ -170,6 +170,11 @@
 			function dummyAlert() {
 				alert('Dummy Alert');
 			}
+			function afterLogin(fn_userId) {
+				alert('after Login started');
+				$("#login").fadeOut();
+				var userId = fn_userId;
+			}
             
             var showDialog = function () { 
                 facebookConnectPlugin.showDialog( { method: "feed" }, 
@@ -254,11 +259,6 @@
 					},
                     function (response) { alert(JSON.stringify(response)) }
 				);
-			}
-			function afterLogin(fn_userId) {
-				alert('after Login started');
-				$("#login").fadeOut();
-				var userId = fn_userId;
 			}
 			
 			$("#facebook_login").on('touchend', function() {
