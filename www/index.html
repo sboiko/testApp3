@@ -47,8 +47,21 @@
 	<div id="login">
 		<a href="#" id="facebook_login">Login with Facebook</a>
 	</div>
+	<!-- 
 	<header>
 		<strong>gym</strong>vite
+	</header>
+	-->
+	<header id="home">
+		<div class="bg"></div>
+		<div class="logo"><img src="img/gymvite_logo.png" alt="" /><strong>gym</strong>vite</div>
+		<div id="profile">
+			<div class="circle"></div>
+			<div class="labels">
+				<span id="name">Steve Boiko</span>
+				<span id="gym_name">24 Hour Fitness<br/><em>Milpitas, CA</em></span>
+			</div>
+		</div>
 	</header>
 	<div id="gyms" class="content-container">
 		<h1>News</h1>
@@ -239,6 +252,7 @@
 			function onDeviceReady() {
 				//alert('test');
 				startApp();
+				StatusBar.backgroundColorByHexString("#ffffff");
 			}
 			function startApp() {
 				facebookConnectPlugin.getLoginStatus( 

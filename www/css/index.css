@@ -69,6 +69,7 @@ body {
 	font-family: 'Roboto';
 }
 
+/*
 header {
 	position: absolute;
 	top: 0;
@@ -85,9 +86,84 @@ header {
 	border-bottom: 1px solid #cccccc;
 	font-family: 'Roboto';
 }
+*/
+
+header#home {
+	height: 500px;
+	font-family: 'Roboto';
+}
+	header#home .logo {
+		position: absolute;
+		color: #ffffff;
+		z-index: 2;
+		width: 100%;
+		text-align: center;
+		font-size: 30px;
+		padding-top: 40px;
+	}
+		header#home .logo img {
+			display: inline-block;
+			height: 30px;
+			vertical-align: middle;
+			margin-right: 12px;
+		}
+		
+	header#home #profile {
+		position: absolute;
+		z-index: 2;
+		margin-top: 95px;
+		padding: 0px 20px;
+	}
+		header#home #profile .circle {
+			width: 110px;
+			height: 110px;
+			border-radius: 100px;
+			background-color: #000000;
+			background-image: url(https://scontent-sjc2-1.xx.fbcdn.net/v/t31.0-1/c365.85.568.568/s240x240/15675591_10211809664059626_8252002603865885041_o.jpg?oh=f39a5525f998237bb3631357b29ab2b9&oe=59CABFCF);
+			background-size: cover;
+			float: left;
+			border: 5px solid #ffffff;
+		}
+		header#home #profile .labels {
+			float: left;
+			margin-left: 20px;
+			font-size: 24px;
+			color: #ffffff;
+			font-weight: 500;
+			padding-top: 10px;
+		}
+		header#home #profile .labels #name {
+			display: block;
+			margin-bottom: 10px;
+		}
+		header#home #profile .labels #gym_name {
+			background: #ffffff;
+			border-radius: 4px;
+			font-size: 18px;
+			display: inline-block;
+			padding: 5px 10px;
+			color: #3e0a0a;
+		}
+			header#home #profile .labels #gym_name em {
+				font-size: 15px;
+			}
+	header#home .bg {
+		background: #d92626;
+		background: -webkit-linear-gradient(left, rgba(237,76,61,1) 0%, rgba(246,41,12,1) 51%, rgba(231,56,39,1) 100%);
+		-webkit-transform:
+            translateY(-140px)
+            translateX(-27px)
+            rotate(-6deg);
+		-webkit-backface-visibility: hidden;
+		position: absolute;
+		height: 300px;
+		width: 200%;
+		z-index: 1;
+		border: 5px solid #ffffff;
+	}
 
 .content-container {
-	padding: 100px 20px 0px;
+	padding: 300px 20px 0px;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -133,6 +209,8 @@ header {
 	left: 3%;
 	width: 94%;
 }
+
+
 #gyms {
 	
 }
