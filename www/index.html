@@ -158,7 +158,9 @@
                 facebookConnectPlugin.login( ["public_profile","email","user_friends"], 
 					// Success
                     function (response) {
+						alert(response.authResponse.userID);
 						afterLogin(response.authResponse.userID);
+						alert(response.authResponse.userID);
 					},
                     function (response) { alert(JSON.stringify(response)) });
             }
