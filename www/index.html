@@ -146,7 +146,8 @@
 				
                 facebookConnectPlugin.login( ["public_profile","email","user_friends"], 
                     function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
+                    function (response) { alert(JSON.stringify(response)) }
+				);
             }
 			
 			var login2 = function () {
@@ -250,8 +251,9 @@
 				);
 			}
 			function afterLogin(fn_userId) {
+				alert('after Login started')
 				$("#login").fadeOut();
-				userId = fn_userId;
+				var userId = fn_userId;
 			}
 			
 			$("#facebook_login").on('touchend', function() {
