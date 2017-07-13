@@ -160,11 +160,16 @@
 					// Success
                     function (response) {
 						alert(response.authResponse.userID);
+						dummyAlert();
 						afterLogin(response.authResponse.userID);
 						alert(response.authResponse.userID);
 					},
                     function (response) { alert(JSON.stringify(response)) });
             }
+			
+			function dummyAlert() {
+				alert('Dummy Alert');
+			}
             
             var showDialog = function () { 
                 facebookConnectPlugin.showDialog( { method: "feed" }, 
